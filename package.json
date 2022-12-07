@@ -1,0 +1,14 @@
+{
+  "name": "salarycalc",
+  "version": "1.0.0",
+  "description": "nje gross salary calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Tarik Merrylees",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
