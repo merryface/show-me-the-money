@@ -18,3 +18,8 @@ test('returns base salary when no extras', () => {
   expect(salary(50000)).toBe(50000);
 });
 
+test('returns salary plus per diem times duty days', () => {
+  expect(salary(58500, 200)).toBe(72500)
+  expect(salary(58500, 202)).toBe(72640)
+})
+
