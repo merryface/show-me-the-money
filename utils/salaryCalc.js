@@ -1,4 +1,4 @@
-const cprCalc = require('./utils/cprCalc.js');
+const cprCalc = require('./cprCalc.js');
 
 function salary({
     base = 0,

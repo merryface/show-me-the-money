@@ -1,4 +1,4 @@
-const salary = require('../index.js');
+const salary = require('../utils/salaryCalc.js');
 
 test('check that input is a number', () => {
   expect(salary({base: "hello"})).toBe("enter a valid number");
@@ -171,3 +171,19 @@ test('test adding high extended days', () => {
   input.hed = 4
   expect(salary(input)).toBe(75900)
 })
+
+// test('ERD during tbp period (50% extension pay)', () => {
+//   let input = {
+//     base: 58500,
+//     dutyDays: 200,
+//     blockHours: 150,
+//     cprPaid: false,
+//     ccOnboard: true,
+//     apuAvail: true,
+//     ned_tbp: 2
+//   }
+
+//   expect(salary(input)).toBe(73150)
+//   input.ned_tbp = 4
+//   expect(salary(input)).toBe(75900)
+// })
