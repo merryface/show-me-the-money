@@ -107,16 +107,17 @@ test('tour based pay salary correction', () => {
     cprPaid: false,
     ccOnboard: true,
     apuAvail: true,
-    tdpActive: true,
-    tdpExtra: 4,
+    tbpActive: true,
+    tbpExtra: 4,
   }
 
-  expect(salary(input)).toBe(74312.5)
-  input.tdpExtra = 8
-  expect(salary(input)).toBe(74312.5)
-  input.tdpExtra = 12
-  expect(salary(input)).toBe(74312.5)
-  input.tdpExtra = 16
-  expect(salary(input)).toBe(74312.5)
-  input.tdpExtra = 20
+  expect(salary(input)).toBe(73962.5)
+  input.tbpExtra = 8
+  expect(salary(input)).toBe(75425)
+  input.tbpExtra = 12
+  expect(salary(input)).toBe(76887.5)
+  input.tbpExtra = 16
+  expect(salary(input)).toBe(78350)
+  input.tbpExtra = 20
+  expect(salary(input)).toBe(79812.5)
 })
