@@ -1,1 +1,28 @@
+.container {
+  width: 100%;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 10vw;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .heading { 
+     font-size: 4rem; 
+  }
+}
+
+.disclaimer {
+  line-height: 1.5;
+  width: 100%;
+  text-align: center;
+  color: rgb(156, 19, 19);
+  border: 1px solid rgb(156, 19, 19);
+}
+
 
