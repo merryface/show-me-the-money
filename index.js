@@ -15,8 +15,14 @@ function salary(
   // cpr
   let cpr = 0
   let rewardableHours = blockHours - 100
-  total += cpr
 
+  if (rewardableHours > 0) cpr += rewardableHours * 70
+
+  if (cprPaid) {
+    if (!ccOnboard && !apuAvail) cpr *= 1.5
+  }
+  
+  total += cpr
 
   perdiemPay = perDiem*70
   total += perdiemPay
