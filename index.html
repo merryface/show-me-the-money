@@ -23,7 +23,51 @@
 
     <form>
       <label class="label" for="base">Base Pay</label>
-      <input class="input" type="number" min="0">
+      <input class="input" name="base" type="number" min="0" id="base">
+
+      <label class="label" for="dutyDays">Choose Duty Days:</label>
+      <input class="input" name="dutyDays" type="number" min="0" id="dutyDays">
+
+      <label class="label" for="blockHours">Block Hours</label>
+      <input class="input" name="blockHours" type="number" min="0" id="blockHours">
+
+      <div class="toggle_container">
+        <label class="label" for="cprPaid">CPR Bonus Year</label>
+        <input class="checkbox" name="cprPaid" type="checkbox" id="cprPaid" />
+        <label for="cprPaid" class="toggle">
+      </div>
+
+
+      <div class="toggle_container">
+        <label class="label" for="ccOnboard">Cabin Crew Fleet</label>
+        <input class="checkbox" name="ccOnboard" type="checkbox" id="ccOnboard" />
+        <label for="ccOnboard" class="toggle">
+      </div>
+
+      <div class="toggle_container">
+        <label class="label" for="apuAvail">APU Equipped Fleet</label>
+        <input class="checkbox" name="apuAvail" type="checkbox" id="apuAvail" />
+        <label for="apuAvail" class="toggle">
+      </div>
+
+      <label class="label" for="dutyDays">Contracted Days:</label>
+      <select class="input" name="dutyDays" id="dutyDays">
+        <option value="200">200</option>
+        <option value="204">204</option>
+        <option value="208">208</option>
+        <option value="212">212</option>
+        <option value="216">216</option>
+        <option value="220">220</option>
+      </select>
+
+      <label class="label" for="tbpHours">TDP Block Hours</label>
+      <input class="input" name="tbpHours" type="number" min="0" id="tbpHours">
+
+      <label class="label" for="ned"> Normal Extended Day</label>
+      <input class="input" name="ned" type="number" min="0" id="ned">
+
+      <label class="label" for="hed"> High Extended Day</label>
+      <input class="input" name="hed" type="number" min="0" id="hed">
     </form>
 
   </div>
