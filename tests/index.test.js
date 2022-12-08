@@ -38,3 +38,9 @@ test('adds CPR productivity for aircraft with no cc and with apu', () => {
   expect(salary(58500, 200, 350, true, false, true)).toBe(101875)
   expect(salary(58500, 200, 500, true, false, true)).toBe(122812.5)
 })
+
+test('adds CPR productivity for aircraft with cc and apu', () => {
+  expect(salary(base=58500, dutyDays=200, blockHours=150, cprPaid=true, ccOnboard=true, apuAvail=true)).toBe(76000)
+  expect(salary(58500, 200, 350, true, true, true)).toBe(96000)
+  expect(salary(58500, 200, 500, true, true, true)).toBe(112750)
+})
