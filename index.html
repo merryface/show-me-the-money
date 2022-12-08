@@ -26,7 +26,7 @@
       <label class="label" for="base">Base Pay</label>
       <input class="input" name="base" type="number" min="0" id="base">
 
-      <label class="label" for="dutyDays">Choose Duty Days:</label>
+      <label class="label" for="dutyDays">Per Diem Days:</label>
       <input class="input" name="dutyDays" type="number" min="0" id="dutyDays">
 
       <label class="label" for="blockHours">Block Hours</label>
@@ -64,14 +64,19 @@
       <label class="label" for="tbpHours">TDP Block Hours</label>
       <input class="input" name="tbpHours" type="number" min="0" id="tbpHours">
 
-      <label class="label" for="ned"> Normal Extended Day</label>
+      <label class="label" for="ned">Normal Extended Day</label>
       <input class="input" name="ned" type="number" min="0" id="ned">
 
-      <label class="label" for="hed"> High Extended Day</label>
+      <label class="label" for="hed">High Extended Day</label>
       <input class="input" name="hed" type="number" min="0" id="hed">
+
+      <label class="label" for="tax">Taxman's Chunk</label>
+      <input class="input" name="tax" type="number" min="0" max="100" id="tax">
     </form>
 
     <button class="calculate" id="calc">Calculate 💸</button>
+
+    <div class="salary_display">Salary Before tax: <span id="output"></span></div>
 
   </div>
 </body>

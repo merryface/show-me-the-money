@@ -33,9 +33,8 @@ document.getElementById("calc").addEventListener("click", () => {
     ned,
     hed
   })
-  
-  console.log(total);
-  
+
+  document.getElementById("output").innerText = `${total.toLocaleString("en-US")}€`
 });
 
 
