@@ -24,6 +24,7 @@ function salary(
 
   if (cprPaid) {
     if (!ccOnboard && !apuAvail) cpr *= 1.5
+    if (!ccOnboard && apuAvail) cpr *= 1.25
   }
 
   total += cpr
