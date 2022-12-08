@@ -13,7 +13,7 @@
 
 @media only screen and (min-width: 500px) {
   .heading { 
-     font-size: 4rem; 
+    font-size: 4rem; 
   }
 }
 
@@ -23,6 +23,24 @@
   text-align: center;
   color: rgb(156, 19, 19);
   border: 1px solid rgb(156, 19, 19);
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 700px;
+
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.input {
+  height: 2rem;
+  max-width: 500px;
+}
 
