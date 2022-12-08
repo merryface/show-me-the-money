@@ -139,3 +139,35 @@ test('Add TBP flight pay', () => {
   input.tbpHours = 200
   expect(salary(input)).toBe(94962.5)
 })
+
+test('test adding normal extended days', () => {
+  let input = {
+    base: 58500,
+    dutyDays: 200,
+    blockHours: 150,
+    cprPaid: false,
+    ccOnboard: true,
+    apuAvail: true,
+    ned: 2
+  }
+
+  expect(salary(input).tobe(73800))
+  input.ned = 4
+  expect(salary(input).tobe(75160))
+})
+
+test('test adding high extended days', () => {
+  let input = {
+    base: 58500,
+    dutyDays: 200,
+    blockHours: 150,
+    cprPaid: false,
+    ccOnboard: true,
+    apuAvail: true,
+    hed: 2
+  }
+
+  expect(salary(input).tobe(74200))
+  input.hed = 4
+  expect(salary(input).tobe(75900))
+})
