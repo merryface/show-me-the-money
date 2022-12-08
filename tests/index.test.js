@@ -98,3 +98,25 @@ test('CPR not applied', () => {
   input.blockHours = 500
   expect(salary(input)).toBe(72500)
 })
+
+test('tour based pay salary correction', () => {
+  let input = {
+    base: 58500,
+    dutyDays: 200,
+    blockHours: 150,
+    cprPaid: false,
+    ccOnboard: true,
+    apuAvail: true,
+    tdpActive: true,
+    tdpExtra: 4,
+  }
+
+  expect(salary(input)).toBe(74312.5)
+  input.tdpExtra = 8
+  expect(salary(input)).toBe(74312.5)
+  input.tdpExtra = 12
+  expect(salary(input)).toBe(74312.5)
+  input.tdpExtra = 16
+  expect(salary(input)).toBe(74312.5)
+  input.tdpExtra = 20
+})
