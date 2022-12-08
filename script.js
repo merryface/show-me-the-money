@@ -7,6 +7,8 @@ const getBool = switchVal => switchVal !== 'on'
 let cprPaid = getBool(getEl('cprPaid'))
 let ccOnboard = getBool(getEl('ccOnboard'))
 let apuAvail = getBool(getEl('apuAvail'))
+let gross = 0
+let net = 0
 
 document.getElementById("cprPaid").addEventListener("click", () => cprPaid = !cprPaid)
 document.getElementById("ccOnboard").addEventListener("click", () => ccOnboard = !ccOnboard)
@@ -20,6 +22,7 @@ document.getElementById("calc").addEventListener("click", () => {
   const tbpHours = Number(getEl('tbpHours'))
   const ned = Number(getEl('ned'))
   const hed = Number(getEl('hed'))
+  const tax = Number(getEl('tax'))
 
   const total = salary({
     base,
@@ -34,7 +37,11 @@ document.getElementById("calc").addEventListener("click", () => {
     hed
   })
 
-  document.getElementById("output").innerText = `${total.toLocaleString("en-US")}€`
+  gross = total
+  net = total - (total * (tax/100))
+
+  document.getElementById("gross_output").innerText = `${gross.toLocaleString("en-US")}€`
+  document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")}€`
 });
 
 
