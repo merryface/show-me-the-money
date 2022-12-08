@@ -1,12 +1,12 @@
 const cprCalc = require('./utils/cprCalc.js');
 
 function salary(
-    base = 0,
+    {base = 0,
     dutyDays = 0,
     blockHours = 0,
     cprPaid = true,
     ccOnboard = false,
-    apuAvail = true
+    apuAvail = true,}
   ) {
   // Guard
   if (typeof base != 'number') return "enter a valid number"
@@ -21,6 +21,9 @@ function salary(
   // per diem
   perdiemPay = dutyDays*70
   total += perdiemPay
+
+  // tbp
+
 
   return total
 }
