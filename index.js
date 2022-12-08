@@ -10,6 +10,8 @@ function salary({
     tbpActive = false,
     tbpExtra = 0,
     tbpHours = 0,
+    ned = 0,
+    hed = 0,
   }) {
   // Guard
   if (typeof base != 'number') return "enter a valid number"
@@ -28,6 +30,10 @@ function salary({
   // per diem
   perdiemPay = dutyDays*70
   total += perdiemPay
+
+  // extended days
+  total += ned*650
+  total += hed*850
 
   return total
 }

@@ -151,9 +151,9 @@ test('test adding normal extended days', () => {
     ned: 2
   }
 
-  expect(salary(input).tobe(73800))
+  expect(salary(input)).toBe(73800)
   input.ned = 4
-  expect(salary(input).tobe(75160))
+  expect(salary(input)).toBe(75100)
 })
 
 test('test adding high extended days', () => {
@@ -167,7 +167,7 @@ test('test adding high extended days', () => {
     hed: 2
   }
 
-  expect(salary(input).tobe(74200))
+  expect(salary(input)).toBe(74200)
   input.hed = 4
-  expect(salary(input).tobe(75900))
+  expect(salary(input)).toBe(75900)
 })
