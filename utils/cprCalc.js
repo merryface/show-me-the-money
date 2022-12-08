@@ -1,4 +1,4 @@
-function cprCalc(cprPaid, blockHours, ccOnboard, apuAvail) {
+export default function cprCalc(cprPaid, blockHours, ccOnboard, apuAvail) {
   if (!cprPaid) return 0
 
   let cpr = 0
@@ -18,4 +18,4 @@ function cprCalc(cprPaid, blockHours, ccOnboard, apuAvail) {
   return cpr
 }
 
-module.exports = cprCalc;
+// module.exports = cprCalc;

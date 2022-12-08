@@ -1,5 +1,6 @@
 {
   "name": "salarycalc",
+  "type": "module",
   "version": "1.0.0",
   "description": "nje gross salary calculator",
   "main": "index.js",

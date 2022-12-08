@@ -1,6 +1,7 @@
-const cprCalc = require('./cprCalc.js');
+// const cprCalc = require('./cprCalc.js');
+import cprCalc from './cprCalc.js'
 
-function salary({
+export default function salary({
     base = 0,
     dutyDays = 0,
     blockHours = 0,
@@ -28,7 +29,7 @@ function salary({
   total += cpr
 
   // per diem
-  perdiemPay = dutyDays*70
+  const perdiemPay = dutyDays*70
   total += perdiemPay
 
   // extended days
@@ -37,5 +38,3 @@ function salary({
 
   return total
 }
-
-module.exports = salary;

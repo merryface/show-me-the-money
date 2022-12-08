@@ -7,6 +7,7 @@
   <title>SHOW ME THE MONEY</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./reset.css">
+  <script src="./script.js" defer type = "module"></script>
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -50,8 +51,8 @@
         <label for="apuAvail" class="toggle">
       </div>
 
-      <label class="label" for="dutyDays">Contracted Days:</label>
-      <select class="input" name="dutyDays" id="dutyDays">
+      <label class="label" for="tbpExtra">Contracted Days:</label>
+      <select class="input" name="tbpExtra" id="tbpExtra">
         <option value="200">200</option>
         <option value="204">204</option>
         <option value="208">208</option>
@@ -70,7 +71,7 @@
       <input class="input" name="hed" type="number" min="0" id="hed">
     </form>
 
-    <button class="calculate">Calculate 💸</button>
+    <button class="calculate" id="calc">Calculate 💸</button>
 
   </div>
 </body>

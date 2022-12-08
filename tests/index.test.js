@@ -1,4 +1,7 @@
-const salary = require('../utils/salaryCalc.js');
+// const salary = require('../utils/salaryCalc.js');
+
+// TODO: fix imprt
+import salary from '../utils/salaryCalc.js'
 
 test('check that input is a number', () => {
   expect(salary({base: "hello"})).toBe("enter a valid number");
