@@ -9,6 +9,7 @@ function salary({
     apuAvail = true,
     tbpActive = false,
     tbpExtra = 0,
+    tbpHours = 0,
   }) {
   // Guard
   if (typeof base != 'number') return "enter a valid number"
@@ -16,6 +17,9 @@ function salary({
 
   // tbp base salary
   let total = tbpActive ? base * (1 + (0.025 * tbpExtra/4)): base
+
+  // tbp flight pay
+  if (tbpActive) total += tbpHours * 105
 
   // cpr
   const cpr = cprCalc(cprPaid, blockHours, ccOnboard, apuAvail)

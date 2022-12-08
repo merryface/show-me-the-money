@@ -121,3 +121,21 @@ test('tour based pay salary correction', () => {
   input.tbpExtra = 20
   expect(salary(input)).toBe(79812.5)
 })
+
+test('Add TBP flight pay', () => {
+  let input = {
+    base: 58500,
+    dutyDays: 200,
+    blockHours: 150,
+    cprPaid: false,
+    ccOnboard: true,
+    apuAvail: true,
+    tbpActive: true,
+    tbpExtra: 4,
+    tbpHours: 100,
+  }
+
+  expect(salary(input)).toBe(84462.5)
+  input.tbpHours = 200
+  expect(salary(input)).toBe(94962.5)
+})
