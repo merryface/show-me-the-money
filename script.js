@@ -1,11 +1,11 @@
 import salary from './utils/salaryCalc.js';
 
 const getEl = id => document.getElementById(id).value
-const getBool = switchVal => switchVal !== 'on'
+const getBool = id => document.getElementById(id).classList.contains('true')
 
-let cprPaid = getBool(getEl('cprPaid'))
-let ccOnboard = getBool(getEl('ccOnboard'))
-let apuAvail = getBool(getEl('apuAvail'))
+let cprPaid = false
+let ccOnboard = false
+let apuAvail = false
 let gross = 0
 let net = 0
 
@@ -16,15 +16,20 @@ const disableButton = (element, state) => {
 
 const toggleSwitch = (id, state) => {
   document.getElementById(id).addEventListener("click", () => {
-    state = !state
+    if (id = "cprPaid") cprPaid = !cprPaid
+    if (id = "ccOnboard") cprPaid = !ccOnboard
+    if (id = "apuAvail") cprPaid = !apuAvail
+
     disableButton(id, true)
     setTimeout(() => { disableButton(id, false) }, 900)
+
   })
 }
 
-document.getElementById("cprPaid").addEventListener("click", toggleSwitch("cprPaid", cprPaid))
-document.getElementById("ccOnboard").addEventListener("click", toggleSwitch("ccOnboard", ccOnboard))
-document.getElementById("apuAvail").addEventListener("click", toggleSwitch("apuAvail", apuAvail))
+document.getElementById("cprPaid").addEventListener("click", toggleSwitch("cprPaid", true))
+document.getElementById("ccOnboard").addEventListener("click", toggleSwitch("ccOnboard", true))
+document.getElementById("apuAvail").addEventListener("click", toggleSwitch("apuAvail", true))
+
 
 document.getElementById("calc").addEventListener("click", () => {
   const base = Number(getEl('base'))
@@ -35,14 +40,15 @@ document.getElementById("calc").addEventListener("click", () => {
   const ned = Number(getEl('ned'))
   const hed = Number(getEl('hed'))
   const tax = Number(getEl('tax'))
-
+  
   const total = salary({
     base,
     dutyDays,
     blockHours,
-    cprPaid: cprPaid,
-    ccOnboard: ccOnboard,
-    apuAvail: apuAvail,
+    cprPaid,
+    ccOnboard,
+    apuAvail,
+    tbpActive: tbpExtra > 0,
     tbpExtra,
     tbpHours,
     ned,

@@ -2,7 +2,7 @@
   "name": "salarycalc",
   "type": "module",
   "version": "1.0.0",
-  "description": "nje gross salary calculator",
+  "description": "SafeJets gross salary calculator",
   "main": "index.js",
   "scripts": {
     "test": "jest"
