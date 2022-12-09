@@ -1,6 +1,5 @@
 import salary from './utils/salaryCalc.js';
 
-
 const getEl = id => document.getElementById(id).value
 const getBool = switchVal => switchVal !== 'on'
 
@@ -10,9 +9,23 @@ let apuAvail = getBool(getEl('apuAvail'))
 let gross = 0
 let net = 0
 
-document.getElementById("cprPaid").addEventListener("click", () => cprPaid = !cprPaid)
-document.getElementById("ccOnboard").addEventListener("click", () => ccOnboard = !ccOnboard)
-document.getElementById("apuAvail").addEventListener("click", () => apuAvail = !apuAvail)
+
+const disableButton = (element, state) => {
+  let el = document.getElementById(element)
+  el.disabled = state
+}
+
+const toggleSwitch = (id, state) => {
+  document.getElementById(id).addEventListener("click", () => {
+    state = !state
+    disableButton(id, true)
+    setTimeout(() => { disableButton(id, false) }, 1000)
+  })
+}
+
+document.getElementById("cprPaid").addEventListener("click", toggleSwitch("cprPaid", cprPaid))
+document.getElementById("ccOnboard").addEventListener("click", toggleSwitch("ccOnboard", ccOnboard))
+document.getElementById("apuAvail").addEventListener("click", toggleSwitch("apuAvail", apuAvail))
 
 document.getElementById("calc").addEventListener("click", () => {
   const base = Number(getEl('base'))
@@ -39,6 +52,9 @@ document.getElementById("calc").addEventListener("click", () => {
 
   gross = total
   net = total - (total * (tax/100))
+
+  console.log(cprPaid, ccOnboard, apuAvail);
+  
 
   document.getElementById("gross_output").innerText = `${gross.toLocaleString("en-US")} €`
   document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")} €`
