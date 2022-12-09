@@ -9,7 +9,6 @@ let apuAvail = getBool(getEl('apuAvail'))
 let gross = 0
 let net = 0
 
-
 const disableButton = (element, state) => {
   let el = document.getElementById(element)
   el.disabled = state
@@ -19,7 +18,7 @@ const toggleSwitch = (id, state) => {
   document.getElementById(id).addEventListener("click", () => {
     state = !state
     disableButton(id, true)
-    setTimeout(() => { disableButton(id, false) }, 1000)
+    setTimeout(() => { disableButton(id, false) }, 900)
   })
 }
 
@@ -51,10 +50,7 @@ document.getElementById("calc").addEventListener("click", () => {
   })
 
   gross = total
-  net = total - (total * (tax/100))
-
-  console.log(cprPaid, ccOnboard, apuAvail);
-  
+  net = total - (total * (tax/100))  
 
   document.getElementById("gross_output").innerText = `${gross.toLocaleString("en-US")} €`
   document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")} €`
