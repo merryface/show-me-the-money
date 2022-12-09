@@ -1,6 +1,7 @@
 import salary from './utils/salaryCalc.js';
 
 const getEl = id => document.getElementById(id).value
+const getElement = id => document.getElementById(id)
 
 let cprPaid = false
 let ccOnboard = false
@@ -58,3 +59,13 @@ document.getElementById("calc").addEventListener("click", () => {
 });
 
 
+document.getElementById("reset").addEventListener("click", () => {
+  document.getElementById('base').value = ''
+  document.getElementById('blockHours').value = ''
+  document.getElementById('dutyDays').value = ''
+  document.getElementById('tbpExtra').value = '200'
+  document.getElementById('tbpHours').value = ''
+  document.getElementById('ned').value = ''
+  document.getElementById('hed').value = ''
+  document.getElementById('tax').value = ''
+})
