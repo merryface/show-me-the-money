@@ -11,7 +11,7 @@
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-  html, .calculate {
+  html, .calculate, button {
     font-family: "Roboto", sans-serif;
   }
 </style>
@@ -74,12 +74,13 @@
     </form>
 
     <button class="button" id="calc">Calculate 💸</button>
-    <button class="reset" id="reset">Reset</button>
 
     <div class="results">
       <p class="salary_display">Before tax: <span class="output" id="gross_output">Click Calculate</span></p>
       <p class="salary_display">After tax: <span class="output" id="net_output">Click Calculate</span></p>
     </div>
+
+    <button class="reset" id="reset">Reset</button>
 
     <div class="info_container">
       <div class="info">
