@@ -1,7 +1,6 @@
 import salary from './utils/salaryCalc.js';
 
 const getEl = id => document.getElementById(id).value
-const getBool = id => document.getElementById(id).classList.contains('true')
 
 let cprPaid = false
 let ccOnboard = false
@@ -16,9 +15,11 @@ const disableButton = (element, state) => {
 
 const toggleSwitch = (id, state) => {
   document.getElementById(id).addEventListener("click", () => {
-    if (id = "cprPaid") cprPaid = !cprPaid
-    if (id = "ccOnboard") cprPaid = !ccOnboard
-    if (id = "apuAvail") cprPaid = !apuAvail
+    if (id === "cprPaid") {
+      cprPaid = !cprPaid
+    }
+    if (id === "ccOnboard") ccOnboard = !ccOnboard
+    if (id === "apuAvail") apuAvail = !apuAvail
 
     disableButton(id, true)
     setTimeout(() => { disableButton(id, false) }, 900)

@@ -9,7 +9,7 @@ export default function cprCalc(cprPaid, blockHours, ccOnboard, apuAvail) {
   if (rewardableHours > 150) cpr += (rewardableHours - 150) * 10
   if (rewardableHours > 250) cpr += (rewardableHours - 250) * 5
   if (rewardableHours > 350) cpr += (rewardableHours - 350) * 5
-
+  
   if (cprPaid) {
     if (!ccOnboard && !apuAvail) cpr *= 1.5
     if (!ccOnboard && apuAvail) cpr *= 1.25
