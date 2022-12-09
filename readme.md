@@ -10,7 +10,7 @@ The frontend is a simple html, css, js, set up which use a form to enter paramet
 Base salary entry. Only takes a number same as or greater than 0.
 
 ### `isCaptain`
-A boolean that determines whether the user is a captain, which allows for modifications.
+A boolean that determines whether the user is a captain, which allows for rank based pay modifications.
 
 ### `dutyDays`
 This is a parameter to calculate per diems paid. It is displayed as "Per diem days" on the frontend. Only takes a number. The per diem rate is 70 euros. therefore `dutyDays*70` is used for the calculation and then added to the base pay into a total.
