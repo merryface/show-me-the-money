@@ -15,22 +15,17 @@ const disableButton = (element, state) => {
 
 const toggleSwitch = (id, state) => {
   document.getElementById(id).addEventListener("click", () => {
-    if (id === "cprPaid") {
-      cprPaid = !cprPaid
-    }
+    if (id === "cprPaid") cprPaid = !cprPaid
     if (id === "ccOnboard") ccOnboard = !ccOnboard
     if (id === "apuAvail") apuAvail = !apuAvail
-
     disableButton(id, true)
     setTimeout(() => { disableButton(id, false) }, 900)
-
   })
 }
 
 document.getElementById("cprPaid").addEventListener("click", toggleSwitch("cprPaid", true))
 document.getElementById("ccOnboard").addEventListener("click", toggleSwitch("ccOnboard", true))
 document.getElementById("apuAvail").addEventListener("click", toggleSwitch("apuAvail", true))
-
 
 document.getElementById("calc").addEventListener("click", () => {
   const base = Number(getEl('base'))
@@ -55,11 +50,10 @@ document.getElementById("calc").addEventListener("click", () => {
     ned,
     hed
   })
-
-  gross = total
+  
   net = total - (total * (tax/100))  
 
-  document.getElementById("gross_output").innerText = `${gross.toLocaleString("en-US")} €`
+  document.getElementById("gross_output").innerText = `${total.toLocaleString("en-US")} €`
   document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")} €`
 });
 
