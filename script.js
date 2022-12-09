@@ -40,8 +40,8 @@ document.getElementById("calc").addEventListener("click", () => {
   gross = total
   net = total - (total * (tax/100))
 
-  document.getElementById("gross_output").innerText = `${gross.toLocaleString("en-US")}€`
-  document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")}€`
+  document.getElementById("gross_output").innerText = `${gross.toLocaleString("en-US")} €`
+  document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")} €`
 });
 
 

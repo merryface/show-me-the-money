@@ -19,7 +19,7 @@
   <div class="container">
     <h1 class="heading">Show me the MONEY!</h1>
     <p class="disclaimer">
-      This is an unofficial NJE pay calculator. Only approved by Dutch Captains and INDOC pilots. Use sensibly and for unrealistic St Tropez daydreaming.
+      This is an unofficial NJE pay estimator. Only approved by Dutch Captains and INDOC pilots. Use sensibly and for unrealistic St Tropez daydreaming.
     </p>
 
     <form>
@@ -76,8 +76,10 @@
 
     <button class="calculate" id="calc">Calculate 💸</button>
 
-    <p class="salary_display">Salary Before tax: <span id="gross_output"></span></p>
-    <p class="salary_display">Salary After tax: <span id="net_output"></span></p>
+    <div class="results">
+      <p class="salary_display">Before tax: <span class="output" id="gross_output">Click Calculate</span></p>
+      <p class="salary_display">After tax: <span class="output" id="net_output">Click Calculate</span></p>
+    </div>
 
   </div>
 </body>

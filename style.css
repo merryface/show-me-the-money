@@ -104,4 +104,20 @@ p {
   padding: 0.8rem 1.5rem;
   font-size: 1.5rem;
   border-radius: 5px;
+  margin-bottom: 3rem;
+}
+
+.salary_display {
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 500px;
+  width: 100%;
+  border:rgb(10, 78, 10) solid 1px;
+  padding: 1rem 2rem;
+}
+
+.output {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color:rgb(19, 19, 114)
 }
