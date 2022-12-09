@@ -94,17 +94,30 @@ form {
   display : none;
 }
 
-.calculate {
+.button {
+  display: block !important;
   all: initial;
   background-color: rgb(19, 19, 114);
   color: #fff;
   padding: 0.8rem 1.5rem;
+  height: 30px;
+  width: 170px;
   font-size: 1.5rem;
   border-radius: 5px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.calculate:hover {
+.reset {
+  all: initial;
+  border: 1px solid rgb(19, 19, 114);
+  font-size: 1.2rem;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.button:hover {
   cursor: pointer;
 }
 
