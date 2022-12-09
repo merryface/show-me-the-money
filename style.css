@@ -142,7 +142,7 @@ form {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
-  align-items: space-between;
+  max-width: 300px;  
 }
 
 .info_label {
