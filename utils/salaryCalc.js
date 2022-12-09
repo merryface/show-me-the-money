@@ -3,6 +3,7 @@ import cprCalc from './cprCalc.js'
 
 export default function salary({
     base = 0,
+    isCaptain = false,
     dutyDays = 0,
     blockHours = 0,
     cprPaid = true,
@@ -33,8 +34,10 @@ export default function salary({
   total += perdiemPay
 
   // extended days
-  total += ned*650
-  total += hed*850
+  const ned_rate = isCaptain ? 850 : 650
+  const hed_rate = isCaptain ? 1050 : 850
+  total += ned*ned_rate
+  total += hed*hed_rate
 
   return total
 }
