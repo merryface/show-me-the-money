@@ -170,3 +170,7 @@ form {
   font-weight: bold;
   margin-bottom: 2rem;
 }
+
+.red {
+  color: rgb(146, 0, 0)
+}

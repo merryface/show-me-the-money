@@ -75,12 +75,6 @@
     </form>
 
     <button class="button" id="calc">Calculate 💸</button>
-
-    <div class="results">
-      <p class="salary_display">Before tax: <span class="output" id="gross_output">Click Calculate</span></p>
-      <p class="salary_display">After tax: <span class="output" id="net_output">Click Calculate</span></p>
-    </div>
-
     <button class="reset" id="reset">Reset</button>
 
     <h2 class="breakdownTitle">Breakdown</h2>
@@ -107,6 +101,18 @@
         <tr class="tableRow">
           <td class="rowName">Tour Based Pay</td>
           <td id="table_tbp"></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="rowName">Tax payment</td>
+          <td class="red" id="table_tax"></td>
+        </tr>
+        <tr class="tableRow totals">
+          <td class="rowName total">Total Before Tax</td>
+          <td id="table_beforeTax"></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="rowName total">Total After Tax</td>
+          <td id="table_afterTax"></td>
         </tr>
       </tbody>
     </table>

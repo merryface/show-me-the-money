@@ -20,16 +20,26 @@ table td {
 .table_container {
   width: 100%;
   max-width: 500px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .tableHead {
   width: 20%;
   height: 3.2rem;
   vertical-align: middle;
+  font-size: 1.5rem;
 }
 
 .tableRow td {
   height: 3rem;
   vertical-align: middle;
+}
+
+.tableRow.totals {
+  border-top: 3px solid #d00000;
+}
+
+.rowName.total {
+  background: #071578;
+  color: #fff;
 }

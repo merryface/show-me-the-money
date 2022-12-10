@@ -1,4 +1,5 @@
 import salary from './utils/salaryCalc.js';
+import cprCalc from './utils/cprCalc.js';
 
 const getEl = id => document.getElementById(id).value
 
@@ -50,10 +51,20 @@ document.getElementById("calc").addEventListener("click", () => {
     hed
   })
   
-  net = total - (total * (tax/100))  
+  net = total - (total * (tax/100)).toFixed(2)
 
-  document.getElementById("gross_output").innerText = `${total.toLocaleString("en-US")} €`
-  document.getElementById("net_output").innerText = `${net.toLocaleString("en-US")} €`
+  const cpr = cprCalc(blockHours, ccOnboard, apuAvail).toFixed(2)
+  const tbp = tbpExtra > 0 ? (tbpHours * 105).toFixed(2) : 0
+
+
+  document.getElementById("table_base").innerText = `${base.toLocaleString("en-US")} €`
+  document.getElementById("table_perDiem").innerText = `${(dutyDays*70).toLocaleString("en-US")} €`
+  document.getElementById("table_cpr").innerText = `${cpr.toLocaleString("en-US")} €`
+  document.getElementById("table_tbp").innerText = `${tbp.toLocaleString("en-US")} €`
+  document.getElementById("table_tax").innerText = `${(-(tax/100)*total).toLocaleString("en-US")} €`
+
+  document.getElementById("table_beforeTax").innerText = `${total.toLocaleString("en-US")} €`
+  document.getElementById("table_afterTax").innerText = `${net.toLocaleString("en-US")} €`
 });
 
 
