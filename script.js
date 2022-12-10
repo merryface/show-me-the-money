@@ -73,6 +73,8 @@ document.getElementById("calc").addEventListener("click", () => {
 
   document.getElementById("table_beforeTax").innerText = `${total.toLocaleString("en-US")} €`
   document.getElementById("table_afterTax").innerText = `${net.toLocaleString("en-US")} €`
+
+  document.getElementById("breakdown").scrollIntoView({behavior: "smooth"})
 });
 
 
