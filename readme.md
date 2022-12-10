@@ -1,7 +1,11 @@
 # Show Me the Money! A Salary calculator
 A tool to help estimate pilot pay at SafeJets. Created using test-driven development. The tests where promptly broken when the script was used practically. Fix in progress. This tool is unofficial and can (and probably will) show some innaccuracies. It is best used for guesstimations, and nothing more.
+<br>
 
 Best coding practices were considered, then prompty ignored.
+<br>
+SafeJets is a fictional company and is not a representation of any real operators.
+<br>
 
 The frontend is a simple html, css, js set up which uses a form to enter parameters into the main function, `salary()`, in order to present the information sought by the flight crew.
 
