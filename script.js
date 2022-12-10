@@ -35,6 +35,7 @@ document.getElementById("calc").addEventListener("click", () => {
   const tbpHours = Number(getEl('tbpHours'))
   const ned = Number(getEl('ned'))
   const hed = Number(getEl('hed'))
+  const lateHome = Number(getEl('lateHome'))
   const tax = Number(getEl('tax'))
   
   const total = salary({
@@ -48,7 +49,8 @@ document.getElementById("calc").addEventListener("click", () => {
     tbpExtra,
     tbpHours,
     ned,
-    hed
+    hed,
+    lateHome
   })
   
   net = total - (total * (tax/100)).toFixed(2)
