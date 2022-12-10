@@ -1,5 +1,8 @@
 import salary from './utils/salaryCalc.js';
 import cprCalc from './utils/cprCalc.js';
+import nedCalc from './utils/nedCalc.js'
+import hedCalc from './utils/hedCalc.js'
+import lateHomeCalc from './utils/lateHomeCalc.js'
 
 const getEl = id => document.getElementById(id).value
 
@@ -63,6 +66,9 @@ document.getElementById("calc").addEventListener("click", () => {
   document.getElementById("table_perDiem").innerText = `${(dutyDays*70).toLocaleString("en-US")} €`
   document.getElementById("table_cpr").innerText = `${cpr.toLocaleString("en-US")} €`
   document.getElementById("table_tbp").innerText = `${tbp.toLocaleString("en-US")} €`
+  document.getElementById("table_ned").innerText = `${nedCalc(ned, isCaptain).toLocaleString("en-US")} €`
+  document.getElementById("table_hed").innerText = `${hedCalc(hed, isCaptain).toLocaleString("en-US")} €`
+  document.getElementById("table_lateHome").innerText = `${lateHomeCalc(lateHome, isCaptain).toLocaleString("en-US")} €`
   document.getElementById("table_tax").innerText = `${(-(tax/100)*total).toLocaleString("en-US")} €`
 
   document.getElementById("table_beforeTax").innerText = `${total.toLocaleString("en-US")} €`
@@ -78,5 +84,6 @@ document.getElementById("reset").addEventListener("click", () => {
   document.getElementById('tbpHours').value = ''
   document.getElementById('ned').value = ''
   document.getElementById('hed').value = ''
+  document.getElementById('lateHome').value = ''
   document.getElementById('tax').value = ''
 })
