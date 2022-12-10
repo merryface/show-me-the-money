@@ -6,7 +6,6 @@ export default function salary({
     isCaptain = false,
     dutyDays = 0,
     blockHours = 0,
-    cprPaid = true,
     ccOnboard = false,
     apuAvail = true,
     tbpActive = false,
@@ -26,7 +25,7 @@ export default function salary({
   if (tbpActive) total += tbpHours * 105
 
   // cpr
-  const cpr = cprCalc(cprPaid, blockHours, ccOnboard, apuAvail)
+  const cpr = cprCalc(blockHours, ccOnboard, apuAvail)
   total += cpr
 
   // per diem

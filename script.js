@@ -3,7 +3,6 @@ import salary from './utils/salaryCalc.js';
 const getEl = id => document.getElementById(id).value
 
 let isCaptain = false
-let cprPaid = false
 let ccOnboard = false
 let apuAvail = false
 let net = 0
@@ -15,7 +14,6 @@ const disableButton = (element, state) => {
 
 const toggleSwitch = (id, state) => {
   document.getElementById(id).addEventListener("click", () => {
-    if (id === "cprPaid") cprPaid = !cprPaid
     if (id === "ccOnboard") ccOnboard = !ccOnboard
     if (id === "apuAvail") apuAvail = !apuAvail
     if (id === "isCaptain") isCaptain = !isCaptain
@@ -25,7 +23,6 @@ const toggleSwitch = (id, state) => {
 }
 
 document.getElementById("isCaptain").addEventListener("click", toggleSwitch("isCaptain", true))
-document.getElementById("cprPaid").addEventListener("click", toggleSwitch("cprPaid", true))
 document.getElementById("ccOnboard").addEventListener("click", toggleSwitch("ccOnboard", true))
 document.getElementById("apuAvail").addEventListener("click", toggleSwitch("apuAvail", true))
 
@@ -44,7 +41,6 @@ document.getElementById("calc").addEventListener("click", () => {
     isCaptain,
     dutyDays,
     blockHours,
-    cprPaid,
     ccOnboard,
     apuAvail,
     tbpActive: tbpExtra > 0,

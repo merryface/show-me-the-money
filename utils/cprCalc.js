@@ -1,6 +1,5 @@
-export default function cprCalc(cprPaid, blockHours, ccOnboard, apuAvail) {
-  if (!cprPaid) return 0
-
+export default function cprCalc(blockHours, ccOnboard, apuAvail) {
+  if (blockHours <= 100) return 0
   let cpr = 0
   let rewardableHours = blockHours - 100
 
@@ -10,10 +9,8 @@ export default function cprCalc(cprPaid, blockHours, ccOnboard, apuAvail) {
   if (rewardableHours > 250) cpr += (rewardableHours - 250) * 5
   if (rewardableHours > 350) cpr += (rewardableHours - 350) * 5
   
-  if (cprPaid) {
-    if (!ccOnboard && !apuAvail) cpr *= 1.5
-    if (!ccOnboard && apuAvail) cpr *= 1.25
-  }
+  if (!ccOnboard && !apuAvail) cpr *= 1.5
+  if (!ccOnboard && apuAvail) cpr *= 1.25
 
   return cpr
 }
