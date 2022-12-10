@@ -41,13 +41,13 @@
 
       <div class="toggle_container">
         <label class="label" for="ccOnboard">Cabin Crew Fleet</label>
-        <input class="checkbox" name="ccOnboard" type="checkbox" id="ccOnboard" />
+        <input class="checkbox" name="ccOnboard" type="checkbox" inputmode="numeric" id="ccOnboard" />
         <label for="ccOnboard" class="toggle">
       </div>
 
       <div class="toggle_container">
         <label class="label" for="apuAvail">APU Equipped Fleet</label>
-        <input class="checkbox" name="apuAvail" type="checkbox" id="apuAvail" />
+        <input class="checkbox" name="apuAvail" type="checkbox" inputmode="numeric" id="apuAvail" />
         <label for="apuAvail" class="toggle">
       </div>
 
@@ -62,16 +62,16 @@
       </select>
 
       <label class="label" for="tbpHours">TBP Block Hours</label>
-      <input class="input" name="tbpHours" type="number" min="0" id="tbpHours">
+      <input class="input" name="tbpHours" type="number" min="0" max="900" inputmode="numeric" id="tbpHours">
 
       <label class="label" for="ned">Normal Extended Day</label>
-      <input class="input" name="ned" type="number" min="0" id="ned">
+      <input class="input" name="ned" type="number" min="0" inputmode="numeric" id="ned">
 
       <label class="label" for="hed">High Extended Day</label>
-      <input class="input" name="hed" type="number" min="0" id="hed">
+      <input class="input" name="hed" type="number" min="0" inputmode="numeric" id="hed">
 
       <label class="label" for="tax">Tax-man's chunk (%)</label>
-      <input class="input" name="tax" type="number" min="0" max="100" id="tax">
+      <input class="input" name="tax" type="number" min="0" max="100" inputmode="numeric" id="tax">
     </form>
 
     <button class="button" id="calc">Calculate 💸</button>
