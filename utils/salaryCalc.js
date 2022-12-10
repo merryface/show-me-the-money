@@ -2,6 +2,7 @@
 import cprCalc from './cprCalc.js'
 import nedCalc from './nedCalc.js'
 import hedCalc from './hedCalc.js'
+import lateHomeCalc from './lateHomeCalc.js'
 
 export default function salary({
     base = 0,
@@ -36,13 +37,10 @@ export default function salary({
   total += perdiemPay
 
   // extended days
-  const ned_rate = isCaptain ? 835 : 655
   total += nedCalc(ned, isCaptain) + hedCalc(hed, isCaptain)
 
-
   // Late Home Payments
-  const lateHomeRate = ned_rate / 2
-  total += lateHome*lateHomeRate
+  lateHomeCalc(lateHome, isCaptain)
 
   return total
 }
