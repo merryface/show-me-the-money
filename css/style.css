@@ -164,3 +164,9 @@ form {
   margin-top: 1rem;
   display: inline-block;
 }
+
+.breakdownTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}

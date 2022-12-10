@@ -1,13 +1,13 @@
 table {
-  border:1px solid #b3adad;
+  border:1.5px solid #545050;
   border-collapse:collapse;
   padding:5px;
 }
 table th {
-  border:1px solid #b3adad;
+  border:1px solid #545050;
   padding:5px;
-  background: #f0f0f0;
-  color: #313030;
+  background: #071578;
+  color: #ffffff;
 }
 table td {
   border:1px solid #b3adad;
@@ -15,4 +15,21 @@ table td {
   padding:5px;
   background: #ffffff;
   color: #313030;
+}
+
+.table_container {
+  width: 100%;
+  max-width: 500px;
+  font-size: 1.4rem;
+}
+
+.tableHead {
+  width: 20%;
+  height: 3.2rem;
+  vertical-align: middle;
+}
+
+.tableRow td {
+  height: 3rem;
+  vertical-align: middle;
 }
