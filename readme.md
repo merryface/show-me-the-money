@@ -1,7 +1,9 @@
 # Show Me the Money! A Salary calculator
-A tool to help estimate pilot pay at SafeJets. Created using test-driven development. The tests where promptly broken when the script was used practically. Fix in progress. This tool is official and can (and probably will) show some innaccuracies. It is best used for guesstimations, and nothing more.
+A tool to help estimate pilot pay at SafeJets. Created using test-driven development. The tests where promptly broken when the script was used practically. Fix in progress. This tool is unofficial and can (and probably will) show some innaccuracies. It is best used for guesstimations, and nothing more.
 
-The frontend is a simple html, css, js, set up which use a form to enter parameters into the main function, `salary()`, in order to present the information sought by the flight crew.
+Best coding practices were considered, then prompty ignored.
+
+The frontend is a simple html, css, js set up which uses a form to enter parameters into the main function, `salary()`, in order to present the information sought by the flight crew.
 
 ## SalaryCalc.js
 `salary()` is a function that an object with 11 key-pair values which represent parameters to calculate the salary.
@@ -21,7 +23,7 @@ The number of hours flown by the flight crew throughout the year. Only takes a n
 ### `cprPaid`
 SafeJets has a profitability bonus based on `blockHours.` It is only paid out in years SafeJets is profitable. This is a boolean to determine whether to add that bonus or not.
 
-### `ccOnboard`, `apuAvail`, `tbpHours`, and `tbpActive`
+### `ccOnboard`, `apuAvail`, `tbpHours`
 TBP multiplication factor is based on some flight hours, cabin crew being part of the crew, and whether the fleet flown has an APU.
 
 ### `ned` and `hed`
