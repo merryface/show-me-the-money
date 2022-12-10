@@ -3,7 +3,7 @@ import cprCalc from './cprCalc.js'
 import nedCalc from './nedCalc.js'
 import hedCalc from './hedCalc.js'
 import lateHomeCalc from './lateHomeCalc.js'
-import vacationSellOffCalc from './vacationSellOffCalc';
+import vacationSellOffCalc from './vacationSellOffCalc.js';
 
 export default function salary({
     base = 0,
