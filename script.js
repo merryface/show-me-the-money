@@ -7,6 +7,8 @@ import vacationSellOffCalc from './utils/vacationSellOffCalc.js';
 
 const getElValue = id => document.getElementById(id).value
 const getEl = id => document.getElementById(id)
+const formatCurrency = value => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(value)
+
 
 let isCaptain = false
 let ccOnboard = false
@@ -64,24 +66,27 @@ getEl("calc").addEventListener("click", () => {
 
   let correctedBase = tbpActive ? base * (1 + (0.025 * tbpExtra/4)): base
   
-  net = total - (total * (tax/100)).toFixed(2)
+  net = total - (total * (tax/100))
 
   const cpr = cprCalc(blockHours, ccOnboard, apuAvail)
   const tbp = tbpExtra > 0 ? (tbpHours * 105): 0
 
-  getEl("table_base").innerText = `${correctedBase.toLocaleString("en-US")} €`
-  getEl("table_perDiem").innerText = `${(dutyDays*70).toLocaleString("en-US")} €`
-  getEl("table_cpr").innerText = `${cpr.toLocaleString("en-US")} €`
-  getEl("table_tbp").innerText = `${tbp.toLocaleString("en-US")} €`
-  getEl("table_ned").innerText = `${nedCalc(ned, isCaptain).toLocaleString("en-US")} €`
-  getEl("table_hed").innerText = `${hedCalc(hed, isCaptain).toLocaleString("en-US")} €`
-  getEl("table_lateHome").innerText = `${lateHomeCalc(lateHome, isCaptain).toLocaleString("en-US")} €`
-  getEl("table_soldDays").innerText = `${vacationSellOffCalc(soldDays, correctedBase).toLocaleString("en-US")} €`
-  getEl("table_tax").innerText = `${(-(tax/100)*total).toLocaleString("en-US")} €`
+  const table_cells = [
+    ['table_base', formatCurrency(correctedBase)],
+    ['table_perDiem', formatCurrency((dutyDays*70))],
+    ['table_cpr', formatCurrency(cpr)],
+    ['table_tbp', formatCurrency(tbp)],
+    ['table_ned', formatCurrency(nedCalc(ned, isCaptain))],
+    ['table_hed', formatCurrency(hedCalc(hed, isCaptain))],
+    ['table_lateHome', formatCurrency((lateHome, isCaptain))],
+    ['table_soldDays', formatCurrency((soldDays, correctedBase))],
+    ['table_tax', formatCurrency(-(tax/100)*total)],
 
-  getEl("table_beforeTax").innerText = `${total.toLocaleString("en-US")} €`
-  getEl("table_afterTax").innerText = `${net.toLocaleString("en-US")} €`
+    ['table_beforeTax', total],
+    ['table_afterTax', net],
+  ]
 
+  table_cells.forEach(cell => getEl(cell[0]).innerText = `${cell[1]}`)
   getEl("breakdown").scrollIntoView({behavior: "smooth"})
 });
 
