@@ -1,15 +1,6 @@
-import salary from './utils/salaryCalc.js';
-import cprCalc from './utils/cprCalc.js';
-import nedCalc from './utils/nedCalc.js'
-import hedCalc from './utils/hedCalc.js'
-import lateHomeCalc from './utils/lateHomeCalc.js'
-import vacationSellOffCalc from './utils/vacationSellOffCalc.js';
 import calculateListener from './utils/calculateListener.js';
 
-const getElValue = id => document.getElementById(id).value
 const getEl = id => document.getElementById(id)
-const formatCurrency = value => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(value)
-
 
 let isCaptain = false
 let ccOnboard = false
