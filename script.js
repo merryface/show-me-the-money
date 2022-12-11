@@ -28,16 +28,17 @@ const toggleSwitch = (id, state) => {
   })
 }
 
-getEl("isCaptain").addEventListener("click", toggleSwitch("isCaptain", true))
-getEl("ccOnboard").addEventListener("click", toggleSwitch("ccOnboard", true))
-getEl("apuAvail").addEventListener("click", toggleSwitch("apuAvail", true))
+const toggleSwitches =["isCaptain", "ccOnboard", "apuAvail"]
+toggleSwitches.forEach(id => getEl(id).addEventListener("click", toggleSwitch(id, true)))
+
 
 getEl("calc").addEventListener("click", () => {
+  const tbpExtra = Number(getElValue('tbpExtra'))-200
+  const tbpActive = tbpExtra > 0
+  
   const base = Number(getElValue('base'))
   const dutyDays = Number(getElValue('dutyDays'))
   const blockHours = Number(getElValue('blockHours'))
-  const tbpExtra = Number(getElValue('tbpExtra'))-200
-  const tbpActive = tbpExtra > 0
   const tbpHours = Number(getElValue('tbpHours'))
   const ned = Number(getElValue('ned'))
   const hed = Number(getElValue('hed'))
