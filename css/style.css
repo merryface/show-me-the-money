@@ -31,6 +31,13 @@
   padding: 1rem;
 }
 
+.instruction {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
