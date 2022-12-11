@@ -78,8 +78,8 @@ getEl("calc").addEventListener("click", () => {
     ['table_tbp', formatCurrency(tbp)],
     ['table_ned', formatCurrency(nedCalc(ned, isCaptain))],
     ['table_hed', formatCurrency(hedCalc(hed, isCaptain))],
-    ['table_lateHome', formatCurrency((lateHome, isCaptain))],
-    ['table_soldDays', formatCurrency((soldDays, correctedBase))],
+    ['table_lateHome', formatCurrency(lateHomeCalc(lateHome, isCaptain), isCaptain)],
+    ['table_soldDays', formatCurrency(vacationSellOffCalc(soldDays,correctedBase))],
     ['table_tax', formatCurrency(-(tax/100)*total)],
 
     ['table_beforeTax', total],
@@ -89,7 +89,6 @@ getEl("calc").addEventListener("click", () => {
   table_cells.forEach(cell => getEl(cell[0]).innerText = `${cell[1]}`)
   getEl("breakdown").scrollIntoView({behavior: "smooth"})
 });
-
 
 getEl("reset").addEventListener("click", () => {
   const inputFields = [
