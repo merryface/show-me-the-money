@@ -76,6 +76,9 @@
       <label class="label" for="lateHome">Late Home Days</label>
       <input class="input" name="lateHome" type="number" min="0" inputmode="numeric" pattern="\d*" id="lateHome">
 
+      <label class="label" for="soldDays">Vacation Days Sold off</label>
+      <input class="input" name="soldDays" type="number" min="0" inputmode="numeric" pattern="\d*" id="soldDays">
+
       <label class="label" for="tax">Tax-man's chunk (%)</label>
       <input class="input" name="tax" type="number" min="0" max="100" inputmode="numeric" pattern="\d*" id="tax">
     </form>
@@ -115,6 +118,10 @@
         <tr class="tableRow">
           <td class="rowName">Late Home Payment</td>
           <td id="table_lateHome"></td>
+        </tr>
+        <tr class="tableRow">
+          <td class="rowName">Vacation Sell Off</td>
+          <td id="table_soldDays"></td>
         </tr>
         <tr class="tableRow">
           <td class="rowName">Tour Based Pay</td>
