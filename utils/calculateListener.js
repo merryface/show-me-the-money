@@ -4,8 +4,8 @@ import nedCalc from './nedCalc.js'
 import hedCalc from './hedCalc.js'
 import lateHomeCalc from './lateHomeCalc.js'
 import vacationSellOffCalc from './vacationSellOffCalc.js';
-const formatCurrency = value => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(value)
 
+const formatCurrency = value => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(value)
 const getEl = id => document.getElementById(id)
 const getElValue = id => document.getElementById(id).value
 
