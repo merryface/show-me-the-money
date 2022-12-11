@@ -126,6 +126,10 @@ form {
   margin-bottom: 2rem;
 }
 
+.reset:hover {
+  cursor: pointer;
+}
+
 .button:hover {
   cursor: pointer;
 }
