@@ -1,5 +1,6 @@
 // const salary = require('../utils/salaryCalc.js');
 
+
 // TODO: fix imprt
 import salary from '../utils/salaryCalc.js'
 
