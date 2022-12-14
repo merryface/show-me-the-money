@@ -19,6 +19,7 @@ const toggleSwitch = (id, state) => {
     if (id === "apuAvail") apuAvail = !apuAvail
     if (id === "isCaptain") isCaptain = !isCaptain
     disableButton(id, true)
+
     setTimeout(() => { disableButton(id, false) }, 900)
   })
 }
@@ -26,5 +27,5 @@ const toggleSwitch = (id, state) => {
 const toggleSwitches =["isCaptain", "ccOnboard", "apuAvail"]
 toggleSwitches.forEach(id => getEl(id).addEventListener("click", toggleSwitch(id, true)))
 
-calculateListener(isCaptain, ccOnboard, apuAvail, net)
+getEl("calc").addEventListener("click", () => calculateListener(isCaptain, ccOnboard, apuAvail, net))
 resetListener()

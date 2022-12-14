@@ -15,4 +15,3 @@ export default function cprCalc(blockHours, ccOnboard, apuAvail) {
   return cpr
 }
 
-// module.exports = cprCalc;
