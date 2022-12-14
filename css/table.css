@@ -43,3 +43,12 @@ table td {
   background: #071578;
   color: #fff;
 }
+
+.table_monthly {
+  margin-top: 2rem;
+}
+
+.HidetdpRow {
+  display: none;
+}
+
