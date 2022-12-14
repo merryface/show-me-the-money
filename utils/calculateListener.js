@@ -61,4 +61,14 @@ export default function calculateListener(isCaptain, ccOnboard, apuAvail, net) {
 
   table_cells.forEach(cell => getEl(cell[0]).innerText = `${cell[1]}`)
   getEl("breakdown").scrollIntoView({behavior: "smooth"})
+
+  const feb = base/12 + (dutyDays*70)/12 + cpr
+  const monthly_table_cells = [
+    ['tableMonth_nonTbp', formatCurrency(base/12 + (dutyDays*70)/12)],
+    ['tableMonth_Tbp', formatCurrency(base/12 + (dutyDays*70)/12 + tbp/4)],
+    ['tableMonth_feb', formatCurrency(feb)],
+  ]
+
+  monthly_table_cells.forEach(cell => getEl(cell[0]).innerText = `${cell[1]}`)
+
 }

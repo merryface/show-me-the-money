@@ -34,6 +34,4 @@ getEl("tbpExtra").addEventListener("input", function() {
   let row = getEl('tbp_monthly')
   const classes = 'tableRow' + (getEl("tbpExtra").value !== '200' ? '' : ' HidetdpRow')
   row.className = classes
-    
-  
 });
