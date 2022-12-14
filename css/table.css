@@ -2,6 +2,7 @@ table {
   border:1.5px solid #545050;
   border-collapse:collapse;
   padding:5px;
+  margin-bottom: 2rem;
 }
 table th {
   border:1px solid #545050;
@@ -42,10 +43,6 @@ table td {
 .rowName.total {
   background: #071578;
   color: #fff;
-}
-
-.table_monthly {
-  margin-top: 2rem;
 }
 
 .HidetdpRow {
