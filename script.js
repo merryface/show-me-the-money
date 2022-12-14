@@ -30,8 +30,10 @@ toggleSwitches.forEach(id => getEl(id).addEventListener("click", toggleSwitch(id
 getEl("calc").addEventListener("click", () => calculateListener(isCaptain, ccOnboard, apuAvail, net))
 resetListener()
 
-getEl("tbpExtra").addEventListener("input", function() {
+getEl("tbpExtra").addEventListener("input", () => {
   let row = getEl('tbp_monthly')
+  let taxRow = getEl('tableMonth_Tbp_after')
   const classes = 'tableRow' + (getEl("tbpExtra").value !== '200' ? '' : ' HidetdpRow')
   row.className = classes
+  taxRow.className = classes
 });
