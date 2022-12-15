@@ -4,12 +4,13 @@ import nedCalc from './nedCalc.js'
 import hedCalc from './hedCalc.js'
 import lateHomeCalc from './lateHomeCalc.js'
 import vacationSellOffCalc from './vacationSellOffCalc.js';
+import perDiemCalc from './perDiemCalc.js';
 
 const formatCurrency = value => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(value)
 const getEl = id => document.getElementById(id)
 const getElValue = id => document.getElementById(id).value
 
-export default function calculateListener(isCaptain, ccOnboard, apuAvail, net) {
+export default function calculateListener(isCaptain, ccOnboard, apuAvail, perDiemTaxed, net) {
   const tbpExtra = Number(getElValue('tbpExtra'))-200
   const tbpActive = tbpExtra > 0
 
@@ -26,7 +27,6 @@ export default function calculateListener(isCaptain, ccOnboard, apuAvail, net) {
   const total = salary({
     base,
     isCaptain,
-    dutyDays,
     blockHours,
     ccOnboard,
     apuAvail,
@@ -39,8 +39,10 @@ export default function calculateListener(isCaptain, ccOnboard, apuAvail, net) {
     soldDays
   })
 
+  const perDiem = perDiemCalc(dutyDays)
+  const perDiem_corrected = perDiemTaxed ? perDiem - (perDiem * (tax/100)) : perDiem
   let correctedBase = tbpActive ? base * (1 + (0.025 * tbpExtra/4)): base
-  net = total - (total * (tax/100))
+  net = total - (total * (tax/100)) + perDiem_corrected
   const cpr = cprCalc(blockHours, ccOnboard, apuAvail)
   const tbp = tbpExtra > 0 ? (tbpHours * 105): 0
 

@@ -2,13 +2,13 @@
 import cprCalc from './cprCalc.js'
 import nedCalc from './nedCalc.js'
 import hedCalc from './hedCalc.js'
+import perDiemCalc from './perDiemCalc.js'
 import lateHomeCalc from './lateHomeCalc.js'
 import vacationSellOffCalc from './vacationSellOffCalc.js';
 
 export default function salary({
     base = 0,
     isCaptain = false,
-    dutyDays = 0,
     blockHours = 0,
     ccOnboard = false,
     apuAvail = true,
@@ -33,9 +33,6 @@ export default function salary({
 
   // cpr
   total += cprCalc(blockHours, ccOnboard, apuAvail)
-
-  // per diem
-  total += dutyDays*70
 
   // extended days
   total += nedCalc(ned, isCaptain) + hedCalc(hed, isCaptain)
