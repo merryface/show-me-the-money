@@ -34,7 +34,7 @@ resetListener()
 
 getEl("tbpExtra").addEventListener("input", () => {
   let row = getEl('tbp_monthly')
-  let taxRow = getEl('tableMonth_Tbp_after')
+  let taxRow = getEl('tbp_monthly_after')
   const classes = 'tableRow' + (getEl("tbpExtra").value !== '200' ? '' : ' HidetdpRow')
   row.className = classes
   taxRow.className = classes
