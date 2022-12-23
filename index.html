@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/table.css">
   <script src="./script.js" defer type = "module"></script>
+  <script src="./utils/tbpHoursAppearance.js" defer></script>
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -35,32 +36,34 @@
       <label class="label" for="dutyDays">Per Diem Days:</label>
       <input class="input" name="dutyDays" type="number" min="0" inputmode="numeric" pattern="\d*" id="dutyDays">
 
-      <div class="toggle_container">
-        <label class="label" for="perDiemTaxed">Per Diem Taxed</label>
-        <input class="checkbox" name="perDiemTaxed" type="checkbox" id="perDiemTaxed" />
-        <label for="perDiemTaxed" class="toggle">
-      </div>
+      <div class="toggles">
+        <div class="toggle_container">
+          <label class="label" for="perDiemTaxed">Per Diem Taxed</label>
+          <input class="checkbox" name="perDiemTaxed" type="checkbox" id="perDiemTaxed" />
+          <label for="perDiemTaxed" class="toggle">
+        </div>
 
-      <label class="label" for="blockHours">Block Hours</label>
-      <input class="input" name="blockHours" type="number" min="0" inputmode="numeric" pattern="\d*" id="blockHours">
+        <div class="toggle_container">
+          <label class="label" for="isCaptain">Captain Rank</label>
+          <input class="checkbox" name="isCaptain" type="checkbox" id="isCaptain" />
+          <label for="isCaptain" class="toggle">
+        </div>
 
-      <div class="toggle_container">
-        <label class="label" for="isCaptain">Captain Rank</label>
-        <input class="checkbox" name="isCaptain" type="checkbox" id="isCaptain" />
-        <label for="isCaptain" class="toggle">
-      </div>
+        <div class="toggle_container">
+          <label class="label" for="ccOnboard">Cabin Crew Fleet</label>
+          <input class="checkbox" name="ccOnboard" type="checkbox" id="ccOnboard" />
+          <label for="ccOnboard" class="toggle">
+        </div>
 
-      <div class="toggle_container">
-        <label class="label" for="ccOnboard">Cabin Crew Fleet</label>
-        <input class="checkbox" name="ccOnboard" type="checkbox" id="ccOnboard" />
-        <label for="ccOnboard" class="toggle">
-      </div>
-
-      <div class="toggle_container">
+        <div class="toggle_container">
         <label class="label" for="apuAvail">APU Equipped Fleet</label>
         <input class="checkbox" name="apuAvail" type="checkbox" id="apuAvail" />
         <label for="apuAvail" class="toggle">
       </div>
+    </div>
+
+      <label class="label" for="blockHours">Block Hours</label>
+      <input class="input" name="blockHours" type="number" min="0" inputmode="numeric" pattern="\d*" id="blockHours">
 
       <label class="label" for="tbpExtra">Contracted Days:</label>
       <select class="input" name="tbpExtra" id="tbpExtra">
@@ -72,7 +75,7 @@
         <option value="220">220</option>
       </select>
 
-      <label class="label" for="tbpHours">TBP Block Hours</label>
+      <label class="label" for="tbpHours" id="tbpHoursLabel">TBP Block Hours</label>
       <input class="input" name="tbpHours" type="number" min="0" max="900" inputmode="numeric" pattern="\d*" id="tbpHours">
 
       <label class="label" for="ned">Normal Extended Day</label>
@@ -90,6 +93,12 @@
       <label class="label" for="tax">Tax-man's chunk (%)</label>
       <input class="input" name="tax" type="number" min="0" max="100" inputmode="numeric" pattern="\d*" id="tax">
     </form>
+
+    <div class="navigation">
+      <button class="button" id="prev">Prev</button>
+      <button class="button" id="next">Next</button>
+
+    </div>
 
     <button class="button" id="calc">Calculate 💸</button>
     <button class="reset" id="reset">Reset</button>
