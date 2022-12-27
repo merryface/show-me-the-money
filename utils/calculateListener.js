@@ -10,13 +10,14 @@ const formatCurrency = value => new Intl.NumberFormat("de-DE", { style: "currenc
 const getEl = id => document.getElementById(id)
 const getElValue = id => document.getElementById(id).value
 
-export default function calculateListener(isCaptain, ccOnboard, apuAvail, perDiemTaxed, net) {
+export default function calculateListener(isCaptain, ccOnboard, apuAvail, natuk, perDiemTaxed, net) {
   const tbpExtra = Number(getElValue('tbpExtra'))-200
   const tbpActive = tbpExtra > 0
 
   const base = Number(getElValue('base'))
   const dutyDays = Number(getElValue('dutyDays'))
   const blockHours = Number(getElValue('blockHours'))
+  const natukHours = Number(getElValue('natukHours'))
   const tbpHours = Number(getElValue('tbpHours'))
   const ned = Number(getElValue('ned'))
   const hed = Number(getElValue('hed'))
@@ -30,6 +31,8 @@ export default function calculateListener(isCaptain, ccOnboard, apuAvail, perDie
     blockHours,
     ccOnboard,
     apuAvail,
+    natuk,
+    natukHours,
     tbpActive,
     tbpExtra,
     tbpHours,
@@ -43,7 +46,7 @@ export default function calculateListener(isCaptain, ccOnboard, apuAvail, perDie
   const perDiem_corrected = perDiemTaxed ? perDiem - (perDiem * (tax/100)) : perDiem
   let correctedBase = tbpActive ? base * (1 + (0.025 * tbpExtra/4)): base
   net = total - (total * (tax/100)) + perDiem_corrected
-  const cpr = cprCalc(blockHours, ccOnboard, apuAvail)
+  const cpr = cprCalc(blockHours, ccOnboard, apuAvail, natuk, natukHours)
   const tbp = tbpExtra > 0 ? (tbpHours * 105): 0
 
   const table_cells = [

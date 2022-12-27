@@ -31,7 +31,7 @@ const toggleSwitch = (id, state) => {
 const toggleSwitches =["isCaptain", "ccOnboard", "apuAvail", "perDiemTaxed", "natuk"]
 toggleSwitches.forEach(id => getEl(id).addEventListener("click", toggleSwitch(id, true)))
 
-getEl("calc").addEventListener("click", () => calculateListener(isCaptain, ccOnboard, apuAvail, perDiemTaxed, net))
+getEl("calc").addEventListener("click", () => calculateListener(isCaptain, ccOnboard, apuAvail, natuk, perDiemTaxed, net))
 resetListener()
 
 getEl("tbpExtra").addEventListener("input", () => {

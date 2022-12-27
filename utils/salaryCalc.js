@@ -13,6 +13,8 @@ export default function salary({
     ccOnboard = false,
     apuAvail = true,
     tbpActive = false,
+    natuk = false,
+    natukHours = 0,
     tbpExtra = 0,
     tbpHours = 0,
     ned = 0,
@@ -32,7 +34,7 @@ export default function salary({
   if (tbpActive) total += tbpHours * 105
 
   // cpr
-  total += cprCalc(blockHours, ccOnboard, apuAvail)
+  total += cprCalc(blockHours, ccOnboard, apuAvail, natuk, natukHours)
 
   // extended days
   total += nedCalc(ned, isCaptain) + hedCalc(hed, isCaptain)

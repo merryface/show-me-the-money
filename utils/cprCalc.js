@@ -1,4 +1,4 @@
-export default function cprCalc(blockHours, ccOnboard, apuAvail) {
+export default function cprCalc(blockHours, ccOnboard, apuAvail, natuk, natukHours) {
   if (blockHours <= 100) return 0
   let cpr = 0
   let rewardableHours = blockHours - 100
@@ -11,7 +11,10 @@ export default function cprCalc(blockHours, ccOnboard, apuAvail) {
   
   if (!ccOnboard && !apuAvail) cpr *= 1.5
   if (!ccOnboard && apuAvail) cpr *= 1.25
-
+  if (natuk) {
+    const natukFraction = natukHours/blockHours
+    cpr += (cpr*natukFraction) *1.75
+  }
   return cpr
 }
 
