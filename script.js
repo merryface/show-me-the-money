@@ -1,5 +1,9 @@
 import calculateListener from './utils/calculateListener.js';
 import resetListener from './utils/resetListener.js';
+import natukHoursAppearance from './utils/natukHoursAppearance.js';
+
+document.getElementById("natukHoursLabel").style.display = "none";
+document.getElementById("natukHours").style.display = "none";
 
 const getEl = id => document.getElementById(id)
 
@@ -22,6 +26,7 @@ const toggleSwitch = (id, state) => {
     if (id === "isCaptain") isCaptain = !isCaptain
     if (id === "perDiemTaxed") perDiemTaxed = !perDiemTaxed
     if (id === "natuk") natuk = !natuk
+    natukHoursAppearance(natuk)
     disableButton(id, true)
 
     setTimeout(() => { disableButton(id, false) }, 900)
