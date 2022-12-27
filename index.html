@@ -30,12 +30,6 @@
     <p class="instruction">All inputs are optional. You can find guidance on what each fields is on <a href="guidance.html">this page</a>.</p>
 
     <form>
-      <label class="label" for="base">Base Pay</label>
-      <input class="input" name="base" type="number" min="0" inputmode="numeric" pattern="\d*" id="base">
-
-      <label class="label" for="dutyDays">Per Diem Days:</label>
-      <input class="input" name="dutyDays" type="number" min="0" inputmode="numeric" pattern="\d*" id="dutyDays">
-
       <div class="toggles">
         <div class="toggle_container">
           <label class="label" for="perDiemTaxed">Per Diem Taxed</label>
@@ -56,14 +50,23 @@
         </div>
 
         <div class="toggle_container">
-        <label class="label" for="apuAvail">APU Equipped Fleet</label>
-        <input class="checkbox" name="apuAvail" type="checkbox" id="apuAvail" />
-        <label for="apuAvail" class="toggle">
+          <label class="label" for="apuAvail">APU Equipped Fleet</label>
+          <input class="checkbox" name="apuAvail" type="checkbox" id="apuAvail" />
+          <label for="apuAvail" class="toggle">
+        </div>
       </div>
-    </div>
+
+      <label class="label" for="base">Base Pay</label>
+      <input class="input" name="base" type="number" min="0" inputmode="numeric" pattern="\d*" id="base">
+
+      <label class="label" for="dutyDays">Per Diem Days:</label>
+      <input class="input" name="dutyDays" type="number" min="0" inputmode="numeric" pattern="\d*" id="dutyDays">
 
       <label class="label" for="blockHours">Block Hours</label>
       <input class="input" name="blockHours" type="number" min="0" inputmode="numeric" pattern="\d*" id="blockHours">
+
+      <label class="label" for="natukHours" id="natukHoursLabel">NATUK Hours Flown</label>
+      <input class="input" name="natukHours" type="number" min="0" max="900" inputmode="numeric" pattern="\d*" id="natukHours">
 
       <label class="label" for="tbpExtra">Contracted Days:</label>
       <select class="input" name="tbpExtra" id="tbpExtra">
@@ -93,12 +96,6 @@
       <label class="label" for="tax">Tax-man's chunk (%)</label>
       <input class="input" name="tax" type="number" min="0" max="100" inputmode="numeric" pattern="\d*" id="tax">
     </form>
-
-    <div class="navigation">
-      <button class="button" id="prev">Prev</button>
-      <button class="button" id="next">Next</button>
-
-    </div>
 
     <button class="button" id="calc">Calculate 💸</button>
     <button class="reset" id="reset">Reset</button>
